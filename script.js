@@ -1,6 +1,13 @@
 
 function compute() {
     principal = parseInt(document.getElementById("principal").value);
+
+    if (principal <=0) {
+        window.alert('Invalid value. Enter a positive number to field "Amount"');
+        document.getElementById("principal").focus();
+        return;
+    }
+
     rate = parseFloat(document.getElementById("rate").value);
     period = parseInt(document.getElementById("years").value);
 
