@@ -2,7 +2,7 @@
 function compute() {
     principal = parseInt(document.getElementById("principal").value);
 
-    if (principal <=0) {
+    if (principal <= 0 || isNaN(principal)) {
         window.alert('Invalid value. Enter a positive number to field "Amount"');
         document.getElementById("principal").focus();
         return;
@@ -47,7 +47,7 @@ function initPage() {
 
 
 function updateRate(value) {
-    var value = document.getElementById('rate').value
-    document.getElementById('display_rate').innerHTML = value
+    var value = parseFloat(document.getElementById('rate').value);
+    document.getElementById('display_rate').innerHTML = value.toFixed(2);
 }
 
