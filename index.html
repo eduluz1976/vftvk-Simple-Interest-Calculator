@@ -1,16 +1,85 @@
+<!DOCTYPE html>
 <html>
-    <head>
+
+<head>
+    <title>Web App - Simple Interest Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+</head>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+<body onload="initPage()">
+    <div class="main-container">
+        <div class="contents">
+            <h1>Simple Interest Calculator</h1>
 
-        <button onclick="compute()">Compute</button>
-    </body>
+            <div class="form-fieldset">
+
+                <div class="form-field">
+                    <div class="form-fields-title">
+                        <label for="principal">
+                            Amount
+                        </label>
+                    </div>
+                    <div class="form-field-input">
+                        <input type="number" id="principal">
+                    </div>
+
+                </div>
+
+                <div class="form-field">
+                    <div class="form-fields-title">
+                        <label for="rate">
+                            Rate
+                        </label>
+                    </div>
+                    <div class="form-field-input">
+                        <input type="range" id="rate" value="0" min="0" max="10" step="0.1" onchange="updateRate()">
+                        <span id="display_rate">0</span>%
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="form-field">
+                    <div class="form-fields-title">
+                        <label for="years">
+                            No. of Years
+                        </label>
+                    </div>
+                    <div class="form-field-input">
+                        <SELECT id="years">
+                        </SELECT>
+                    </div>
+
+                </div>
+
+
+
+                <button onclick="compute()">Compute Interest</button> <br>
+
+                <output id="result">
+                    If you deposit <span id="value_principal" class="value_result"></span> <br />
+                    at an interest rate of <span id="value_rate" class="value_result"></span> %.<br>
+                    You will receive an amount of <span id="value_amount" class="value_result"></span>, <br>
+                    in the year <span id="value_final_year" class="value_result"></span>.
+                </output>
+
+
+
+
+            </div>
+
+
+
+        </div>
+        <div class="footer">
+            &copy; Everyone Can Get Rich
+        </div>
+
+
+    </div>
+</body>
+
 </html>
